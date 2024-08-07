@@ -1,5 +1,20 @@
+import { API_TYPE_NAMES } from "../../constants";
+
 type DashboardProps = {
-  foo?: string;
+  searchTerm: string;
+  searchTypeId: API_TYPE_NAMES;
 };
 
-export type { DashboardProps };
+type PeopleResult = {
+  name: string;
+  homeworld: string;
+  species: string;
+};
+
+type APIPeopleResult = {
+  name: string;
+  homeworld: string;
+  species: string[];
+};
+
+export type { APIPeopleResult, DashboardProps, PeopleResult };

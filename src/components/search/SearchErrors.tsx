@@ -1,0 +1,22 @@
+import { SearchErrorsProps } from "./types";
+
+const SearchErrors = ({ errors }: SearchErrorsProps) => {
+  const errorsList = [];
+  if (errors.search) {
+    errorsList.push(errors.search);
+  }
+
+  if (errors.searchType) {
+    errorsList.push(errors.searchType);
+  }
+
+  if (errorsList.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="text-sm text-red-500 my-4">{errorsList.join(" / ")}</div>
+  );
+};
+
+export default SearchErrors;
