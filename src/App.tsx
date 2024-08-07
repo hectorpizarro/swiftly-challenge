@@ -1,17 +1,18 @@
 import { useState } from "react";
-import "./App.css";
 import Dashboard from "./components/dashboard/Dashboard";
 import Search from "./components/search/Search";
 import { API_TYPE_NAMES } from "./constants";
 
-type Foo = {
+type InitialValues = {
   searchTerm: string;
   searchTypeId: API_TYPE_NAMES;
 };
 
+// Main component
 function App() {
+  // Search data is stored in state here. IT  is updated from Search and provided to Dashboard in order to make API calls.
   const [searchData, setSearchData] = useState(() => {
-    const initialValues: Foo = {
+    const initialValues: InitialValues = {
       searchTerm: "",
       searchTypeId: "name",
     };
@@ -19,6 +20,7 @@ function App() {
     return initialValues;
   });
 
+  // Function used by Search to update state search values
   const updateSearch = (searchTerm: string, searchTypeId: API_TYPE_NAMES) => {
     setSearchData({
       searchTerm,

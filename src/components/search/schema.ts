@@ -1,11 +1,13 @@
 import * as Yup from "yup";
 import { FormValues } from "./types";
 
+// Search form initial values
 const initialValues: FormValues = {
   search: "",
   searchType: "name",
 };
 
+// Using Yup for validation. Schema is provided to Formik form.
 const validationSchema = Yup.object().shape({
   search: Yup.string()
     .trim() // Remove whitespace from beginning and end of string

@@ -1,5 +1,6 @@
 import { SearchErrorsProps } from "./types";
 
+// Error component, rendered under the search fields. You can test it entering "@@@" in the search input field.
 const SearchErrors = ({ errors }: SearchErrorsProps) => {
   const errorsList = [];
   if (errors.search) {

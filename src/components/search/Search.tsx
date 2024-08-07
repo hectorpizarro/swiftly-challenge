@@ -1,9 +1,12 @@
+// Using Formik for form handling
 import { Field, Form, Formik, FormikHelpers } from "formik";
 import { initialValues, validationSchema } from "./schema";
 import { FormValues, SearchProps } from "./types";
 import SearchErrors from "./SearchErrors";
 
+// Search component
 const Search = ({ updateSearch }: SearchProps) => {
+  // Executed when Form is submitted. Updates search values in parent state
   const onSubmit = (
     values: FormValues,
     { setSubmitting }: FormikHelpers<FormValues>

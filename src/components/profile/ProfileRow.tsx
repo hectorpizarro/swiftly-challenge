@@ -1,5 +1,6 @@
 import { ProfileRowProps } from "./types";
 
+// Component renders a row inside a Profile card
 const ProfileRow = ({ fieldName, fieldValue }: ProfileRowProps) => {
   return (
     <li className="flex gap-">
